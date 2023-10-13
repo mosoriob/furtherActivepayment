@@ -11,7 +11,7 @@
         // Take the uri from the params
         var qs = decodeURIComponent(document.location.search);
         if (qs) {
-          baseUri = qs.split("?linkingUri=")[1];
+          baseUri = qs.split("?ws_token=")[1];
         }
 
         // Update the link urls
@@ -19,22 +19,6 @@
           links[i].href = links[i].href.replace("exp://REPLACE_ME/", baseUri);
           console.log(links[i].href);
         }
-
-        var redirectInterval = setInterval(function () {
-          var countdown = document.querySelector(".countdown");
-          var t = parseInt(countdown.innerText, 10);
-          t -= 1;
-
-          countdown.innerText = t;
-
-          if (t === 0) {
-            clearInterval(redirectInterval);
-            window.location.href =
-              baseUri +
-              "message=" +
-              encodeURIComponent("Redirected automatically by timer");
-          }
-        }, 1000);
       });
     </script>
   </head>
