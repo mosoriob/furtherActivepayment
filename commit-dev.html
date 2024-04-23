@@ -6,7 +6,7 @@
     <script>
       document.addEventListener("DOMContentLoaded", function (event) {
         var links = document.querySelectorAll("a");
-        var baseUri = "exp://192.168.1.237:8081";
+        var baseUri = "com.anonymous.furtherActive";
         var redirectUrl = baseUri + "/--/payment/" + document.location.search;
         console.log("Redirecting to " + redirectUrl);
         window.location.href = redirectUrl;
